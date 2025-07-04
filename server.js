@@ -128,7 +128,7 @@ app.delete('/api/tasks/:id', async (req, res) => {
 });
 
 // Schedule email reminders (runs every minute)
-cron.schedule('*/15 * * * *', async () => {
+cron.schedule('*/10 * * * *', async () => {
   console.log('Cron job running at:', new Date().toLocaleString('en-US', { timeZone: 'UTC' }));
   const now = new Date();
   const in24Hours = new Date(now.getTime() + 24 * 60 * 60 * 1000);
